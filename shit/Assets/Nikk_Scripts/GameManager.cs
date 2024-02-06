@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +11,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int dificulty = 4;
     [SerializeField] private Transform gameHolder;
     [SerializeField] private Transform piecePrefab;
+    [SerializeField] private GameObject ram;
 
     [Header("UI Elements")]
     [SerializeField] private List<Texture2D> imageTextures;
     [SerializeField] private Transform levelSelectPanel;
     [SerializeField] private Image levelSelectPrefab;
 
+    bool yes = false;
     private List<Transform> pieces;
     private Vector2Int dimensions;
 
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Texture2D texture in imageTextures)
+        foreach (Texture2D texture in imageTextures)
         {
             Image image = Instantiate(levelSelectPrefab, levelSelectPanel);
             image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
         Scatter();
 
         UpdateBorder();
+
+        yes = true;
     }
 
     Vector2Int GetDimensions(Texture2D jigsawTexture, int Dificulty)
@@ -158,11 +163,14 @@ public class GameManager : MonoBehaviour
             {
                 draggingPiece = hit.transform;
                 offSet = draggingPiece.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                offSet += Vector3.back;
             }
         }
 
         if(draggingPiece && Input.GetMouseButtonUp(0))
         {
+            SnapAndDisableIfCorrect();
+            draggingPiece.position += Vector3.forward;
             draggingPiece = null;
         }
 
@@ -172,6 +180,29 @@ public class GameManager : MonoBehaviour
             //newPosition.z = draggingPiece.position.z;
             newPosition += offSet;
             draggingPiece.position = newPosition;
+        }
+
+        if(yes == true)
+        {
+            Debug.Log("HAHAHAHHAH");
+            ram.gameObject.SetActive(true);
+        }
+    }
+
+    private void SnapAndDisableIfCorrect()
+    {
+        int pieceIndex = pieces.IndexOf(draggingPiece);
+
+        int col = pieceIndex % dimensions.x;
+        int row = pieceIndex / dimensions.x;
+
+        Vector2 targetPosition = new((-width * dimensions.x / 2) + (width * col) + (width / 2), (-height * dimensions.y / 2) + (height * row) + (height / 2));
+
+        if(Vector2.Distance(draggingPiece.localPosition, targetPosition) < width/2)
+        {
+            draggingPiece.localPosition = targetPosition;
+
+            draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
