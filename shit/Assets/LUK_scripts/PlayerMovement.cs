@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float jumpSpeed = 15f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform bulletSpawnPoint;
     Rigidbody2D rb;
     Vector2 moveInput;
     Collider2D coll;
@@ -31,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += new Vector2(0f, jumpSpeed);
         }
+    }
+
+    void OnFire()
+    {
+        Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
     }
 
     void Run()
