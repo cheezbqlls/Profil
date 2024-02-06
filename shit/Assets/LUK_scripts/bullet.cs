@@ -7,20 +7,29 @@ public class bullet : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float bulletSpeed = 20f;
 
-    GameObject player;
-    float xSpeed = 20f;
+    float dir;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        player = GameObject.FindGameObjectWithTag("Player");
-        xSpeed = player.transform.localScale.x * bulletSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(xSpeed, 0f);
+        rb.velocity = new Vector2(dir * bulletSpeed, 0f);
+    }
+
+    public void SetDir(float xDir)
+    {
+        dir = xDir;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemies"))
+        {
+            Destroy(other.gameObject);
+        }
+        Destroy(gameObject);
     }
 }
