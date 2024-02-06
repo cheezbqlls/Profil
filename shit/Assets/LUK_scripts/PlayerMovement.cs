@@ -12,15 +12,21 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveInput;
     Collider2D coll;
+    Animator ani;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+        ani = GetComponent<Animator>();
     }
 
     void Update()
     {
         Run();
+        if(rb.velocity.y != jumpSpeed)
+        {
+            ani.SetBool("isJump", false);
+        }
     }
     void OnMove(InputValue value)
     {
@@ -32,17 +38,29 @@ public class PlayerMovement : MonoBehaviour
         if (coll.IsTouchingLayers(LayerMask.GetMask("ground")))
         {
             rb.velocity += new Vector2(0f, jumpSpeed);
+            ani.SetBool("isJump", true);
         }
     }
 
     void OnFire()
     {
-        Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+        GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+        newBullet.GetComponent<bullet>().SetDir(Mathf.Sign(-transform.localScale.x));
     }
 
     void Run()
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
         rb.velocity = playerVelocity;
+
+        if (moveInput.x != 0)
+        {
+            transform.localScale = new Vector2(-moveInput.x, transform.localScale.y);
+            ani.SetBool("isRunning", true);
+        }
+        else
+        {
+            ani.SetBool("isRunning", false);
+        }
     }
 }
