@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Texture2D> imageTextures;
     [SerializeField] private Transform levelSelectPanel;
     [SerializeField] private Image levelSelectPrefab;
+    [SerializeField] private GameObject exit;
 
     bool yes = false;
     private List<Transform> pieces;
@@ -27,14 +28,16 @@ public class GameManager : MonoBehaviour
 
     private Transform draggingPiece = null;
     private Vector3 offSet;
+
+    private int piecesCorrect;
     // Start is called before the first frame update
     void Start()
     {
         foreach (Texture2D texture in imageTextures)
         {
             Image image = Instantiate(levelSelectPrefab, levelSelectPanel);
-            image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-            image.GetComponent<Button>().onClick.AddListener(delegate { StartGame(texture); });
+            StartGame(texture);
+
         }
     }
 
@@ -55,6 +58,8 @@ public class GameManager : MonoBehaviour
         UpdateBorder();
 
         yes = true;
+
+        piecesCorrect = 0;
     }
 
     Vector2Int GetDimensions(Texture2D jigsawTexture, int Dificulty)
@@ -184,8 +189,7 @@ public class GameManager : MonoBehaviour
 
         if(yes == true)
         {
-            Debug.Log("HAHAHAHHAH");
-            ram.gameObject.SetActive(true);
+            //ram.gameObject.SetActive(true);
         }
     }
 
@@ -203,6 +207,24 @@ public class GameManager : MonoBehaviour
             draggingPiece.localPosition = targetPosition;
 
             draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
+
+            piecesCorrect++;
+            if(piecesCorrect == pieces.Count)
+            {
+                exit.SetActive(true);
+            }
         }
+    }
+
+    public void BackToGama()
+    {
+        foreach(Transform piece in pieces)
+        {
+            Destroy(piece.gameObject);
+        }
+
+        pieces.Clear();
+        gameHolder.GetComponent<LineRenderer>().enabled = false;
+        exit.SetActive(false);
     }
 }
