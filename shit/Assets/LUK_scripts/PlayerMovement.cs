@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 moveInput;
     Collider2D coll;
     Animator ani;
+    bool jump = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,24 +24,35 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        Jump();
         Run();
-        if(rb.velocity.y != jumpSpeed)
-        {
-            ani.SetBool("isJump", false);
-        }
     }
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
-    void OnJump()
+    void OnJump(InputValue value)
+    {
+        jump = true;      
+    }
+
+    void Jump()
     {
         if (coll.IsTouchingLayers(LayerMask.GetMask("ground")))
         {
-            rb.velocity += new Vector2(0f, jumpSpeed);
-            ani.SetBool("isJump", true);
+            if (jump)
+            {
+                transform.position += new Vector3(0, 0, 0);
+                rb.velocity += new Vector2(0f, jumpSpeed);
+                ani.SetBool("isJump", true);
+            }
+            else if (rb.velocity.y != jumpSpeed)
+            {    
+                ani.SetBool("isJump", false);
+            }
         }
+        jump = false;
     }
 
     void OnFire()

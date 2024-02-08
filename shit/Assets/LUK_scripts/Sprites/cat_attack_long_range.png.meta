@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b98000d53755d044b8dd6d1e3f451424
+guid: 69c17b4f55037c948b023b8977da4fda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_idle_sprites_0
+      name: cat_attack_long_range_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9744e87a11d29e74db06d8c99d635d32
-      internalID: 1937226908
+      spriteID: bbcf4f7309fb6f0499aab8d1136c0430
+      internalID: 618179139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_sprites_1
+      name: cat_attack_long_range_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e30adf01c5ded36428d55b62fe0ae167
-      internalID: 794808095
+      spriteID: 16f43879c795a4e4d9552171793e4129
+      internalID: 1365872471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_sprites_2
+      name: cat_attack_long_range_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018326a4256ee924a8a16c02be5ec408
-      internalID: -33385413
+      spriteID: b52aca2b2964d6148a01a059ab7463d7
+      internalID: -1774630089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_sprites_3
+      name: cat_attack_long_range_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f501595f7b97284a9f71abb9c464e60
-      internalID: -14003226
+      spriteID: 2f385bf4cf99cda4fab602f1c7f7ebdd
+      internalID: -921462367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_sprites_4
+      name: cat_attack_long_range_4
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de9d03fcc0e6fe48991e3e814ad0a6f
-      internalID: 1197127610
+      spriteID: da41dbef1eda1af4c87dfe458f4a03dc
+      internalID: 1007086796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_sprites_5
+      name: cat_attack_long_range_5
       rect:
         serializedVersion: 2
         x: 32
@@ -224,8 +224,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9afea68e09de5f4f89e773eeb19982f
-      internalID: 930591055
+      spriteID: 218b22a941f230e4fb11887a4a1c8c00
+      internalID: -626221151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_attack_long_range_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94a7cbf92102fb47a5f2923efeb7b61
+      internalID: 1998871291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_attack_long_range_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d389eef9c3decf4390db0b5b537cfa1
+      internalID: -132646817
       vertices: []
       indices: 
       edges: []
@@ -241,12 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cat_idle_sprites_5: 930591055
-      cat_idle_sprites_1: 794808095
-      cat_idle_sprites_2: -33385413
-      cat_idle_sprites_4: 1197127610
-      cat_idle_sprites_0: 1937226908
-      cat_idle_sprites_3: -14003226
+      cat_attack_long_range_6: 1998871291
+      cat_attack_long_range_0: 618179139
+      cat_attack_long_range_4: 1007086796
+      cat_attack_long_range_1: 1365872471
+      cat_attack_long_range_5: -626221151
+      cat_attack_long_range_3: -921462367
+      cat_attack_long_range_7: -132646817
+      cat_attack_long_range_2: -1774630089
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
