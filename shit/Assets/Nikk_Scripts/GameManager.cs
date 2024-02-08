@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform levelSelectPanel;
     [SerializeField] private Image levelSelectPrefab;
     [SerializeField] private GameObject exit;
+    [SerializeField] private GameObject puzzle;
 
     bool yes = false;
     private List<Transform> pieces;
@@ -226,5 +227,6 @@ public class GameManager : MonoBehaviour
         pieces.Clear();
         gameHolder.GetComponent<LineRenderer>().enabled = false;
         exit.SetActive(false);
+        puzzle.gameObject.SetActive(false);
     }
 }
