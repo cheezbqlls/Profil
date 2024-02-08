@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    
+    [SerializeField] float posX;
+    [SerializeField] float posY;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(3, -0.2f);
+        transform.position = new Vector2(posX, posY);
     }
 }
