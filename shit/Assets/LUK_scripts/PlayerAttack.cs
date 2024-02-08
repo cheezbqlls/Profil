@@ -6,6 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea = default;
 
+    Animator ani;
+
     private bool attacking = false;
 
     private float timeToAttack = 0.25f;
@@ -18,8 +20,9 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.F))
         {
+
             Attack();
         }
 
@@ -32,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
                 timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
+                ani.SetBool("ShortRange", false);
             }
         }
     }
@@ -40,4 +44,5 @@ public class PlayerAttack : MonoBehaviour
         attacking = true;
         attackArea.SetActive(attacking);
     }
+
 }
