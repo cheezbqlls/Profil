@@ -57,8 +57,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnFire()
     {
+
+        ani.SetTrigger("LongRange");
         GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
         newBullet.GetComponent<bullet>().SetDir(Mathf.Sign(-transform.localScale.x));
+
     }
 
     void Run()

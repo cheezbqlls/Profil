@@ -5,9 +5,7 @@ using UnityEngine;
 public class ShortRange : MonoBehaviour
 {
     public Animator animator;
-
     public float attackRange = 1f;
-
     public string compareTag;
 
     void Update()
