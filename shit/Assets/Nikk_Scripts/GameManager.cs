@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [Header("Game Elements")]
-    [Range(2, 6)]
+    [Range(2, 10)]
     [SerializeField] private int dificulty = 4;
     [SerializeField] private Transform gameHolder;
     [SerializeField] private Transform piecePrefab;
@@ -61,24 +61,20 @@ public class GameManager : MonoBehaviour
         yes = true;
 
         piecesCorrect = 0;
+        ram.transform.position = Vector3.forward;
+        exit.SetActive(false);
     }
 
     Vector2Int GetDimensions(Texture2D jigsawTexture, int Dificulty)
     {
         Vector2Int dimensions = Vector2Int.zero;
 
-        if(jigsawTexture.width < jigsawTexture.height)
-        {
-            dimensions.x = dificulty;
-            dimensions.y = (dificulty * jigsawTexture.height) / jigsawTexture.width;
 
-        }
-        else
-        {
+
             dimensions.x = (dificulty * jigsawTexture.height) / jigsawTexture.width;
             dimensions.y = dificulty;
 
-        }
+
 
         return dimensions;
     }
@@ -152,8 +148,8 @@ public class GameManager : MonoBehaviour
         lineRenderer.SetPosition(2, new Vector3(halfWidth, -halfHeight, borderZ));
         lineRenderer.SetPosition(3, new Vector3(-halfWidth, -halfHeight, borderZ));
 
-        lineRenderer.startWidth = 0.1f;
-        lineRenderer.endWidth = 0.1f;
+        lineRenderer.startWidth = 0f;
+        lineRenderer.endWidth = 0f;
 
         lineRenderer.enabled = true;
 
@@ -176,7 +172,7 @@ public class GameManager : MonoBehaviour
         if(draggingPiece && Input.GetMouseButtonUp(0))
         {
             SnapAndDisableIfCorrect();
-            draggingPiece.position += Vector3.forward;
+            draggingPiece.position += Vector3.back;
             draggingPiece = null;
         }
 
