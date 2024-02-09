@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (jump)
             {
-                transform.position += new Vector3(0, 0.3f, 0);
+                transform.position += new Vector3(0, 0.4f, 0);
                 rb.velocity += new Vector2(0f, jumpSpeed);
                 ani.SetBool("isJump", true);
             }
