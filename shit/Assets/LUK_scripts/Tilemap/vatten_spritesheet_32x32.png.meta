@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b4e51b5760822c49a78947b83623782
+guid: b3b8d94417bfec94583f9db6bb5ebb4c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vatten_sprite_sheet_32x32_0
+      name: vatten_spritesheet_32x32_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa819cc49aad033408bb327c28e382a7
-      internalID: -1833276351
+      spriteID: 9b241b9ea7459e24db89cd52a0a06d82
+      internalID: 231203676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vatten_sprite_sheet_32x32_1
+      name: vatten_spritesheet_32x32_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86c8bd2b059839b4099b3be155ecd6c5
-      internalID: 1176992477
+      spriteID: 80400ebbd45ff3c4aad474558a5f56a3
+      internalID: 1660141671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vatten_sprite_sheet_32x32_2
+      name: vatten_spritesheet_32x32_2
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64e4aeba307ac2543a042667041396eb
-      internalID: -1248469054
+      spriteID: 4faa41afda6964043a72ea83bbbec1c3
+      internalID: 839533477
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vatten_sprite_sheet_32x32_3
+      name: vatten_spritesheet_32x32_3
       rect:
         serializedVersion: 2
         x: 32
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0920c6f2d01b4994cad773599c7c6d23
-      internalID: -991612968
+      spriteID: f0cf401b278cbe54f815acc89eb52cf9
+      internalID: 811107363
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vatten_sprite_sheet_32x32_3: -991612968
-      vatten_sprite_sheet_32x32_2: -1248469054
-      vatten_sprite_sheet_32x32_0: -1833276351
-      vatten_sprite_sheet_32x32_1: 1176992477
+      vatten_spritesheet_32x32_1: 1660141671
+      vatten_spritesheet_32x32_2: 839533477
+      vatten_spritesheet_32x32_3: 811107363
+      vatten_spritesheet_32x32_0: 231203676
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

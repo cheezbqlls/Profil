@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: New Animated Tile
+  m_Name: Water
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -1833276351, guid: 6b4e51b5760822c49a78947b83623782, type: 3}
-  - {fileID: 1176992477, guid: 6b4e51b5760822c49a78947b83623782, type: 3}
-  - {fileID: -1248469054, guid: 6b4e51b5760822c49a78947b83623782, type: 3}
-  - {fileID: -991612968, guid: 6b4e51b5760822c49a78947b83623782, type: 3}
+  - {fileID: 231203676, guid: b3b8d94417bfec94583f9db6bb5ebb4c, type: 3}
+  - {fileID: 1660141671, guid: b3b8d94417bfec94583f9db6bb5ebb4c, type: 3}
+  - {fileID: 839533477, guid: b3b8d94417bfec94583f9db6bb5ebb4c, type: 3}
+  - {fileID: 811107363, guid: b3b8d94417bfec94583f9db6bb5ebb4c, type: 3}
   m_MinSpeed: 1
   m_MaxSpeed: 1
   m_AnimationStartTime: 0
