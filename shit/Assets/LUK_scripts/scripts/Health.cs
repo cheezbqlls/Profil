@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
+    [SerializeField] private GameObject sheild;
 
     private int MAX_HEALTH = 125;
 
@@ -69,8 +70,12 @@ public class Health : MonoBehaviour
         if (other.CompareTag("healingPotion"))
         {
             health += 25;
-            Debug.Log("Ökad");
+            Debug.Log("25 health+");
         }
-    }
+        if (other.CompareTag("shieldPotion"))
+        {
+            sheild.SetActive(true);
+        }
 
+    }
 }

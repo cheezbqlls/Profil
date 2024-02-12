@@ -9,6 +9,8 @@ TagManager:
   - Object
   - red
   - healingPotion
+  - shieldPotion
+  - Shield
   layers:
   - Default
   - TransparentFX
