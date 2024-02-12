@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [Header("positioning")]
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject spelare;
+    [SerializeField] private GameObject camera;
 
     bool yes = false;
     private List<Transform> pieces;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     private Transform draggingPiece = null;
     private Vector3 offSet;
     Rigidbody2D rBSpelare;
+    Vector3 positionCent;
 
     private int piecesCorrect;
     // Start is called before the first frame update
@@ -45,9 +47,10 @@ public class GameManager : MonoBehaviour
             StartGame(texture);
 
         }
-        canvas.transform.position = spelare.transform.position;
+        
         rBSpelare = spelare.GetComponent<Rigidbody2D>();
         rBSpelare.isKinematic = true;
+        canvas.transform.position = camera.transform.position;
     }
 
     public void StartGame(Texture2D jigsawTexture)
