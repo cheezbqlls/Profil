@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private Transform draggingPiece = null;
     private Vector3 offSet;
+    Rigidbody2D rBSpelare;
 
     private int piecesCorrect;
     // Start is called before the first frame update
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
 
         }
         canvas.transform.position = spelare.transform.position;
+        rBSpelare = spelare.GetComponent<Rigidbody2D>();
+        rBSpelare.isKinematic = true;
     }
 
     public void StartGame(Texture2D jigsawTexture)
@@ -229,5 +232,6 @@ public class GameManager : MonoBehaviour
         gameHolder.GetComponent<LineRenderer>().enabled = false;
         exit.SetActive(false);
         puzzle.gameObject.SetActive(false);
+        rBSpelare.isKinematic = false;
     }
 }
