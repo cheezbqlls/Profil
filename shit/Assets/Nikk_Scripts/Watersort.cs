@@ -29,7 +29,7 @@ public class Watersort : MonoBehaviour
     {
        rb = GetComponent<Rigidbody2D>();
         lastPos = rb.position;
-        transform.position = new Vector3(xCord2, -0.2f, 0);
+        transform.position = new Vector3(-2, -0.2f, 0);
     }
 
     // Update is called once per frame
@@ -94,7 +94,7 @@ public class Watersort : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Object"))
         {
-            Debug.Log("hahah");
+
             ya = true;
             
         }
@@ -104,7 +104,6 @@ public class Watersort : MonoBehaviour
     {
         if(other.gameObject.CompareTag("1") && type == 1)
         {
-            Debug.Log("Rätt!");
             antalRätt += 1;
         }
         else if(other.gameObject.CompareTag("1") && type == 2)
