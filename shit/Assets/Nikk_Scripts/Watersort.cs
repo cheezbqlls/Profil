@@ -17,8 +17,13 @@ public class Watersort : MonoBehaviour
     [SerializeField] float xCord;
     [SerializeField] float yCord;
     [SerializeField] float xCord2;
-    [SerializeField] float xCord3;
-    [SerializeField] float xCord4;
+
+    [Header("Done")]
+    [SerializeField] private GameObject exit;
+
+
+    int antalRätt; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,39 +68,10 @@ public class Watersort : MonoBehaviour
         {
             rightArea = false;
         }
-
-        //Tub3
-        if (transform.position.x > (xCord3 - 1) && transform.position.y < yCord && rightArea == false)
+       
+        if(antalRätt == 4)
         {
-            transform.position = new Vector3((xCord3 - 1), transform.position.y, 0);
-
-        }
-        if (transform.position.x > (xCord3 - 1) && transform.position.x < (xCord3 + 1))
-        {
-            rightArea = true;
-            transform.position = new Vector3(xCord3, transform.position.y, 0);
-
-        }
-        if (transform.position.y > (yCord + 0.5) && rightArea == true && transform.position.x < xCord3)
-        {
-            rightArea = false;
-        }
-
-        //Tub4
-        if (transform.position.x > (xCord4 - 1) && transform.position.y < yCord && rightArea == false)
-        {
-            transform.position = new Vector3((xCord4 - 1), transform.position.y, 0);
-
-        }
-        if (transform.position.x > (xCord4 - 1) && transform.position.x < (xCord4 + 1))
-        {
-            rightArea = true;
-            transform.position = new Vector3(xCord4, transform.position.y, 0);
-
-        }
-        if (transform.position.y > (yCord + 0.5) && rightArea == true && transform.position.x < xCord4)
-        {
-            rightArea = false;
+            Done();
         }
 
     }
@@ -129,6 +105,7 @@ public class Watersort : MonoBehaviour
         if(other.gameObject.CompareTag("1") && type == 1)
         {
             Debug.Log("Rätt!");
+            antalRätt += 1;
         }
         else if(other.gameObject.CompareTag("1") && type == 2)
         {
@@ -139,5 +116,10 @@ public class Watersort : MonoBehaviour
     private void OnCollisionExit2D(Collision2D other)
     {
         ya = false;
+    }
+
+    private void Done()
+    {
+        exit.SetActive(true);
     }
 }
