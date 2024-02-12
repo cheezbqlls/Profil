@@ -6,8 +6,10 @@ public class S_Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] float moveSpeed =3f;
-    [SerializeField] GameObject spelare;
-    [SerializeField] GameObject self;
+    public Transform playerTransform;
+    public bool isChasing;
+    public float chaseDistance;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,11 +18,30 @@ public class S_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spelare.transform.position.x <( self.transform.position.x + 4) && spelare.transform.position.x > self.transform.position.x)
+        if (isChasing)
         {
-            rb.velocity = new Vector2(0, 0);
+            if(transform.position.x > playerTransform.position.x)
+            {
+                transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            }
+            if (transform.position.x < playerTransform.position.x)
+            {
+                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            }
+            if(playerTransform.position.y > (transform.position.y + 4))
+            {
+                isChasing = false;
+            }
         }
-        rb.velocity = new Vector2(moveSpeed, 0f);
+        else
+        {
+            if(Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+            {
+                isChasing = true;
+            }
+            rb.velocity = new Vector2(moveSpeed, 0f);
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
