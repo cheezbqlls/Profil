@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
 
-    private int MAX_HEALTH = 100;
+    private int MAX_HEALTH = 125;
 
     // Update is called once per frame
     void Update()
@@ -61,6 +61,15 @@ public class Health : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Damage(10);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("healingPotion"))
+        {
+            health += 25;
+            Debug.Log("Ökad");
         }
     }
 

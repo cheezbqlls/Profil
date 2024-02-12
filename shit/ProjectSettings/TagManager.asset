@@ -8,6 +8,7 @@ TagManager:
   - 1
   - Object
   - red
+  - healingPotion
   layers:
   - Default
   - TransparentFX
