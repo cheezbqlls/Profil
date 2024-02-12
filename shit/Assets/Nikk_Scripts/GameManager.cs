@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject puzzle;
 
+    [Header("positioning")]
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject spelare;
+
     bool yes = false;
     private List<Transform> pieces;
     private Vector2Int dimensions;
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
             StartGame(texture);
 
         }
+        canvas.transform.position = spelare.transform.position;
     }
 
     public void StartGame(Texture2D jigsawTexture)
