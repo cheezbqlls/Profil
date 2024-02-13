@@ -18,12 +18,37 @@ MonoBehaviour:
   - {fileID: -662829940, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
   - {fileID: -1445396448, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
   - {fileID: -247019309, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1967346831, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1695669924, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1118229830, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 407592396, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1434209180, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 59747021, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1940949301, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 481328359, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1670331530, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1796278837, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -557803818, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -997872778, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1685383683, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1990950753, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 123923371, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -2013629268, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1488037869, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1876852368, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -758137629, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -82481608, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1722830376, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 1121354695, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -1798820915, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -643518113, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -352714449, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 504514190, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: 225491650, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -224987243, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
+  - {fileID: -224987243, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
   m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_MaxSpeed: 10
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
