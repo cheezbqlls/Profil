@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody2D rB;
     [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] GameObject self;
+
     // Start is called before the first frame update
     float dir;
     void Start()
@@ -21,5 +23,14 @@ public class Bullet : MonoBehaviour
     public void SetDir( float xdir)
     {
         dir = xdir;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(self);
+        }
+        
     }
 }
