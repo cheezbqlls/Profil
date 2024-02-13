@@ -6,10 +6,8 @@ public class S_Enemy : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] float moveSpeed =3f;
-    public Transform playerTransform;
-    public bool isChasing;
-    public float chaseDistance;
-
+    public Transform[] patrolPoints;
+    public int patrolDestination;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,30 +16,27 @@ public class S_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isChasing)
+        if(patrolDestination == 0)
         {
-            if(transform.position.x > playerTransform.position.x)
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
+            if(Vector2.Distance(transform.position, patrolPoints[0].position) < .2f)
             {
-                transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            }
-            if (transform.position.x < playerTransform.position.x)
-            {
-                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            }
-            if(playerTransform.position.y > (transform.position.y + 4))
-            {
-                isChasing = false;
+                transform.localScale = new Vector3(1, 1, 1);
+                patrolDestination = 1;
             }
         }
-        else
+        if (patrolDestination == 1)
         {
-            if(Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].position, moveSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, patrolPoints[1].position) < .2f)
             {
-                isChasing = true;
+                transform.localScale = new Vector3(-1, 1, 1);
+                patrolDestination = 0;
             }
-            rb.velocity = new Vector2(moveSpeed, 0f);
         }
-        
+
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -57,4 +52,8 @@ public class S_Enemy : MonoBehaviour
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
     }
 
+    void Shoot()
+    {
+
+    }
 }
