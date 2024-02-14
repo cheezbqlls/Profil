@@ -35,7 +35,6 @@ public class S_Enemy : MonoBehaviour
             isShooting = true;
             if (timer >1.5)
             {
-                
                 timer = 0;
                 GameObject newBullet = Instantiate(bullet, bulletPos.position, transform.rotation);
                 newBullet.GetComponent<Bullet>().SetDir(Mathf.Sign(transform.localScale.x));
