@@ -95,7 +95,9 @@ public class S_Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-
+            ani.SetBool("Walk", false);
+            ani.SetTrigger("Death");
+            
         }
 
 
@@ -125,11 +127,6 @@ public class S_Enemy : MonoBehaviour
     void Damage(float damage)
     {
         health -= damage;
-    }
-
-    void Death()
-    {
-
     }
 
 }
