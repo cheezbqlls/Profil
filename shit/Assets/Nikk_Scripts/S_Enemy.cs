@@ -25,19 +25,19 @@ public class S_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        
         if (Vector2.Distance(transform.position, playerTransform.position) < inRange)
         {
+            timer += Time.deltaTime;
             ani.SetBool("Walk", false);
             ani.SetTrigger("Shooting");
             isShooting = true;
             if (timer >1.5)
             {
+                
                 timer = 0;
                 GameObject newBullet = Instantiate(bullet, bulletPos.position, transform.rotation);
                 newBullet.GetComponent<Bullet>().SetDir(Mathf.Sign(transform.localScale.x));
-                
-
             }
 
             
@@ -45,6 +45,7 @@ public class S_Enemy : MonoBehaviour
         else
         {
             isShooting = false;
+            ani.SetBool("Walk", true);
         }
         if (isShooting == false)
         {
