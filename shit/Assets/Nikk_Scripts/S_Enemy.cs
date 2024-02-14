@@ -16,6 +16,7 @@ public class S_Enemy : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform bulletPos;
     Animator ani;
+    float health = 40;
 
     private void Start()
     {
@@ -92,6 +93,11 @@ public class S_Enemy : MonoBehaviour
             
         }
 
+        if(health <= 0)
+        {
+
+        }
+
 
 
 
@@ -101,6 +107,28 @@ public class S_Enemy : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            Damage(6);
+        }
+        if (other.gameObject.CompareTag("sword"))
+        {
+            Damage(10);
+        }
+    }
+
+    void Damage(float damage)
+    {
+        health -= damage;
+    }
+
+    void Death()
+    {
 
     }
 

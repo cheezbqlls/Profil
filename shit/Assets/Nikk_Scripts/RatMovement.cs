@@ -22,21 +22,14 @@ public class RatMovement : MonoBehaviour
         {
             if (transform.position.x > playerTransform.position.x)
             {
-                ani.SetBool("IsWalking", true);
-
                 transform.localScale = new Vector3(-1, 1, 1);
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
             }
             if (transform.position.x < playerTransform.position.x)
             {
-                ani.SetBool("IsWalking", true);
-
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             }
-
-            
-
         }
         else
         {
@@ -44,7 +37,6 @@ public class RatMovement : MonoBehaviour
             {
                 isChasing = true;
             }
-            ani.SetBool("IsWalking", false);
         }
     }
 }
