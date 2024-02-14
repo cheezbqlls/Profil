@@ -9,9 +9,10 @@ public class HealthManager : MonoBehaviour
     public float healthAmount = 100f;
     [SerializeField] private GameObject sheild;
     public GameObject coll;
+    Animator ani;
     void Start()
     {
-        
+        ani = GetComponent<Animator>();
     }
 
     void Update()
@@ -31,6 +32,7 @@ public class HealthManager : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(20);
+
         }
         if (other.gameObject.CompareTag("deathZone"))
         {
