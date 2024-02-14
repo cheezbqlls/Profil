@@ -11,6 +11,9 @@ TagManager:
   - healingPotion
   - shieldPotion
   - Shield
+  - bullet
+  - sword
+  - deathZone
   layers:
   - Default
   - TransparentFX
