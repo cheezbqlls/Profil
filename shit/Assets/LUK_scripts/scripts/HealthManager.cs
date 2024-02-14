@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
     public float healthAmount = 100f;
+    [SerializeField] private GameObject sheild;
     void Start()
     {
         
@@ -14,15 +15,7 @@ public class HealthManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            TakeDamage(20);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Heal(5);
-        }
 
     }
 
@@ -32,11 +25,25 @@ public class HealthManager : MonoBehaviour
         healthBar.fillAmount = healthAmount / 100f;
     }
 
-    public void Heal(float healingAmount)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(20);
+        }
+    }
 
-        healthBar.fillAmount = healthAmount / 100f;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("healingPotion"))
+        {
+            healthAmount += 25;
+            Debug.Log("25 health+");
+        }
+        if (other.CompareTag("shieldPotion"))
+        {
+            sheild.SetActive(true);
+        }
+
     }
 }

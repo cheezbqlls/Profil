@@ -701,7 +701,7 @@ Tilemap:
       - {fileID: 225491650, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
       - {fileID: -224987243, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
       - {fileID: -224987243, guid: fdc2f7d3673233048b484824218d5e55, type: 3}
-      m_AnimationSpeed: 8.20135
+      m_AnimationSpeed: 2.8650203
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -816,7 +816,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1177,7 +1177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686323294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.287777, y: -3.2619798, z: -10}
+  m_LocalPosition: {x: -35.28769, y: -3.25015, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1369,6 +1369,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &764071029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764071031}
+  - component: {fileID: 764071030}
+  m_Layer: 0
+  m_Name: deathZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &764071030
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764071029}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.2478561, y: 0.51023674}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 76.81383, y: 2.0204735}
+  m_EdgeRadius: 0
+--- !u!4 &764071031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764071029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.1298065, y: -11.53, z: -0.17990085}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778196741
 GameObject:
@@ -3006,6 +3064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1271586956}
   healthAmount: 100
+  sheild: {fileID: 0}
 --- !u!224 &2051963810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5104,7 +5163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4623074287843279773, guid: eaa7676196f33c143b676de777ed9132, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 1.1317596
+      value: 3.300821
       objectReference: {fileID: 0}
     - target: {fileID: 4623074287843279774, guid: eaa7676196f33c143b676de777ed9132, type: 3}
       propertyPath: m_Name
@@ -5178,7 +5237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740588130731029217, guid: 5ec5ae1e52af0954a9bc5a6a5eca9dc6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.25
+      value: -35.35
       objectReference: {fileID: 0}
     - target: {fileID: 8740588130731029217, guid: 5ec5ae1e52af0954a9bc5a6a5eca9dc6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5315,7 +5374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8981276368699117550, guid: e53fbc4f0879d334b95a43b1f412941e, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 3.6362104
+      value: 1.0173717
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e53fbc4f0879d334b95a43b1f412941e, type: 3}
