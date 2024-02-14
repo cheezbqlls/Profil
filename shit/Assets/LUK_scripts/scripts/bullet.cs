@@ -26,10 +26,6 @@ public class bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Enemies"))
-        {
-            Destroy(other.gameObject);
-        }
         Destroy(gameObject);
     }
 }

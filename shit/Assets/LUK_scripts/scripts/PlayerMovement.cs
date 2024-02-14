@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     Collider2D coll;
     Animator ani;
     bool jump = false;
+    float bullets;
+    float timer;
+    bool timerOn = false;
 
     void Start()
     {
@@ -56,11 +59,30 @@ public class PlayerMovement : MonoBehaviour
 
     void OnFire()
     {
-
-        ani.SetTrigger("LongRange");
-        GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
-        newBullet.GetComponent<bullet>().SetDir(Mathf.Sign(-transform.localScale.x));
-
+        bullets += 1;
+        if(bullets <= 20)
+        {
+            ani.SetTrigger("LongRange");
+            GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+            newBullet.GetComponent<bullet>().SetDir(Mathf.Sign(-transform.localScale.x));
+        }
+        if(bullets > 20)
+        {
+            Debug.Log("slut");
+            timerOn = true;
+        }
+        if(timerOn == true)
+        {
+            timer += Time.deltaTime * 100;
+            Debug.Log(timer);
+        }
+        if(timer > 5)
+        {
+            Debug.Log("done");
+            bullets = 0;
+            timer = 0;
+            timerOn = false;
+        }
     }
 
     void Run()
