@@ -6,6 +6,7 @@ public class bullet : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] float bulletSpeed = 20f;
+    public GameObject self;
 
     float dir;
 
@@ -24,8 +25,8 @@ public class bullet : MonoBehaviour
     {
         dir = xDir;
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Destroy(self);
     }
 }
