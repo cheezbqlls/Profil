@@ -17,6 +17,7 @@ public class S_Enemy : MonoBehaviour
     [SerializeField] Transform bulletPos;
     Animator ani;
     float health = 40;
+    bool dead = false;
 
     private void Start()
     {
@@ -47,7 +48,7 @@ public class S_Enemy : MonoBehaviour
             isShooting = false;
             ani.SetBool("Walk", true);
         }
-        if (isShooting == false)
+        if (isShooting == false && dead == false)
         {
             if (isChasing)
             {
@@ -94,6 +95,7 @@ public class S_Enemy : MonoBehaviour
 
         if(health <= 0)
         {
+            dead = true;
             ani.SetBool("Walk", false);
             ani.SetTrigger("Death");
             
