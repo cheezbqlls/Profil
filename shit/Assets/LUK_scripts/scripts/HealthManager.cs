@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     public Image healthBar;
     public float healthAmount = 100f;
     [SerializeField] private GameObject sheild;
+    public GameObject coll;
     void Start()
     {
         
@@ -31,6 +32,10 @@ public class HealthManager : MonoBehaviour
         {
             TakeDamage(20);
         }
+        if (other.gameObject.CompareTag("deathZone"))
+        {
+            Die();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,5 +50,9 @@ public class HealthManager : MonoBehaviour
             sheild.SetActive(true);
         }
 
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

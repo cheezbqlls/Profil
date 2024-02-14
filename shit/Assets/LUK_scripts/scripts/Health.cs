@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -29,7 +30,6 @@ public class Health : MonoBehaviour
             Die();
         }
     }
-
     public void Heal(int amount)
     {
         if (amount < 0)
@@ -53,7 +53,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("I am dead!");
+        Debug.Log("DEAD");
         Destroy(gameObject);
     }
 

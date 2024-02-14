@@ -7,6 +7,7 @@ public class ShortRange : MonoBehaviour
     public Animator animator;
     public float attackRange = 1f;
     public string compareTag;
+    public GameObject sword;
 
     void Update()
     {
@@ -18,6 +19,7 @@ public class ShortRange : MonoBehaviour
 
     void Attack()
     {
+        sword.gameObject.SetActive(true);
         // Play attack animation
         animator.SetTrigger("ShortRange");
 
