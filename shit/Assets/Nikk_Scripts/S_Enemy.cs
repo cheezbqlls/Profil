@@ -17,12 +17,19 @@ public class S_Enemy : MonoBehaviour
     [SerializeField] Transform bulletPos;
     Animator ani;
 
+    private void Start()
+    {
+        ani = GetComponent<Animator>();
+        ani.SetBool("Walk", true);
+    }
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         if (Vector2.Distance(transform.position, playerTransform.position) < inRange)
         {
+            ani.SetBool("Walk", false);
+            ani.SetTrigger("Shooting");
             isShooting = true;
             if (timer >1.5)
             {
@@ -30,6 +37,7 @@ public class S_Enemy : MonoBehaviour
                 GameObject newBullet = Instantiate(bullet, bulletPos.position, transform.rotation);
                 newBullet.GetComponent<Bullet>().SetDir(Mathf.Sign(transform.localScale.x));
                 
+
             }
 
             
@@ -80,6 +88,7 @@ public class S_Enemy : MonoBehaviour
                     }
                 }
             }
+            
         }
 
 
