@@ -25,6 +25,7 @@ public class HealthManager : MonoBehaviour
     {
         healthAmount -= Damage;
         healthBar.fillAmount = healthAmount / 100f;
+        ani.SetTrigger("isDamaged");
     }
 
     private void OnCollisionEnter2D(Collision2D other)

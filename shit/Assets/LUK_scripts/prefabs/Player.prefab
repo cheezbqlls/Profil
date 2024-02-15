@@ -314,9 +314,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  jumpSpeed: 20
+  jumpSpeed: 18
   bullet: {fileID: 3080708106197810215, guid: 0946fbb3fdb1bb3449ae93473532d0f4, type: 3}
   bulletSpawnPoint: {fileID: 8740588129351804219}
+  healthBar: {fileID: 0}
+  healthAmount: 100
+  sheild: {fileID: 5545140499428547194}
+  collDeath: {fileID: 0}
 --- !u!114 &8740588130731029218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +625,44 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3870990664325111570, guid: 8f9c70fefbd4c6a4ea34e735034313e3, type: 3}
   m_PrefabInstance: {fileID: 8740588130423375208}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1871331528
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545140499428547194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034589767, y: 0.09187269}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 1.6, y: 1.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.84505844, y: 1.3370209}
+  m_EdgeRadius: 0
+--- !u!114 &1871331527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545140499428547194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb0ea30ed4ba874c9031369527a0376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7401880368846526842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2302478928145112082, guid: 8f9c70fefbd4c6a4ea34e735034313e3, type: 3}
