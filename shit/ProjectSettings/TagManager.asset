@@ -17,6 +17,7 @@ TagManager:
   - ground
   - Hands
   - ColiderEnemy
+  - Start
   layers:
   - Default
   - TransparentFX

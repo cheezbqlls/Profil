@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     bool isHurt;
     float timerSheild;
     float timerHurt;
+    public GameObject self;
     
 
 
