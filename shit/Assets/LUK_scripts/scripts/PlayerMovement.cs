@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +19,15 @@ public class PlayerMovement : MonoBehaviour
     float bullets;
     float timer;
     bool timerOn = false;
+    public Image healthBar;
+    public float healthAmount = 100f;
+    [SerializeField] private GameObject sheild;
+    public GameObject collDeath;
+    bool isHurt;
+    float timerSheild;
+    float timerHurt;
+    
+
 
     void Start()
     {
@@ -27,8 +38,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Jump();
-        Run();
+        if (isHurt == false)
+        {
+            Jump();
+            Run();
+        }
+        if(isHurt == true)
+        {
+            timerHurt += Time.deltaTime * 100;
+            if(timerHurt > 0.5)
+            {
+                isHurt = false;
+                timerHurt = 0;
+            }
+        }
     }
     void OnMove(InputValue value)
     {
@@ -99,5 +122,44 @@ public class PlayerMovement : MonoBehaviour
         {
             ani.SetBool("isRunning", false);
         }
+    }
+    public void TakeDamage(float Damage)
+    {
+        healthAmount -= Damage;
+        healthBar.fillAmount = healthAmount / 100f;
+        ani.SetTrigger("isDamaged");
+        ani.SetBool("isRunning", false);
+        isHurt = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(20);
+
+        }
+        if (other.gameObject.CompareTag("deathZone"))
+        {
+            Die();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("healingPotion"))
+        {
+            healthAmount += 25;
+            Debug.Log("25 health+");
+        }
+        if (other.CompareTag("shieldPotion"))
+        {
+            sheild.SetActive(true);
+        }
+
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
