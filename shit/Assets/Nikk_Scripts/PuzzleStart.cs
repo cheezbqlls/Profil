@@ -7,30 +7,38 @@ public class PuzzleStart : MonoBehaviour
 {
     [SerializeField] private GameObject startObject;
     [SerializeField] private GameObject self;
+    bool yes = false;
+    BoxCollider2D coll;
     // Start is called before the first frame update
     void Start()
     {
-
+       coll = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if(yes == true)
         {
-            startObject.gameObject.SetActive(true);
-            Debug.Log("snälla");
-            self.gameObject.SetActive(false);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                startObject.gameObject.SetActive(true);
+                Debug.Log("snälla");
+                self.gameObject.SetActive(false);
+            }
         }
 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Playuer"))
+        Debug.Log("inside");
+        if (other.CompareTag("Player"))
         {
-
+            Debug.Log("correct tag");
+            yes = true;
         }
+        
     }
 
 

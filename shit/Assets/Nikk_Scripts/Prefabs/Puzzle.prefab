@@ -245,13 +245,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7357926481346860295}
   - component: {fileID: 7357926481346860292}
+  - component: {fileID: 1014714416}
   m_Layer: 0
   m_Name: nedladdning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7357926481346860295
 Transform:
   m_ObjectHideFlags: 0
@@ -307,8 +308,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 084f59e1b0fa54248b3f7d377017388d, type: 3}
+  m_SortingOrder: 32767
+  m_Sprite: {fileID: 21300000, guid: 4fd553072cb2e4344829921fa56ea319, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -319,6 +320,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1014714416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357926481346860290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77691979ac324cf4ab46679a9db073ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
 --- !u!1 &7357926481391483014
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138bc2a018552464cab218b35f4eb2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dificulty: 2
+  dificulty: 6
   gameHolder: {fileID: 7357926481257446820}
   piecePrefab: {fileID: 7063138045675122996, guid: 8e8d4618a4f43a24689abe85b27269c5, type: 3}
   ram: {fileID: 7357926481346860290}
@@ -507,6 +521,9 @@ MonoBehaviour:
   levelSelectPrefab: {fileID: 2555596824957621268, guid: ec19171f333f466498304c47d12d2e4e, type: 3}
   exit: {fileID: 7357926481391483014}
   puzzle: {fileID: 7357926482460247505}
+  canvas: {fileID: 7357926481257446821}
+  spelare: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &7357926482460247505
 GameObject:
   m_ObjectHideFlags: 0

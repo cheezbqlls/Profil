@@ -18,6 +18,8 @@ public class S_Enemy : MonoBehaviour
     Animator ani;
     float health = 40;
     bool dead = false;
+    float timer2;
+
 
     private void Start()
     {
@@ -96,6 +98,7 @@ public class S_Enemy : MonoBehaviour
         if(health <= 0)
         {
             dead = true;
+            ani.ResetTrigger("Shooting");
             ani.SetBool("Walk", false);
             ani.SetTrigger("Death");
             
@@ -115,13 +118,22 @@ public class S_Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        
         if (other.gameObject.CompareTag("bullet"))
         {
             Damage(6);
+            ani.ResetTrigger("Shooting");
+            ani.SetBool("Walk", false);
+            ani.SetTrigger("Damage");
+
+
         }
         if (other.gameObject.CompareTag("sword"))
         {
             Damage(10);
+            ani.SetBool("Walk", false);
+            ani.SetTrigger("Damage");
+           Debug.Log("Hit");
         }
     }
 
