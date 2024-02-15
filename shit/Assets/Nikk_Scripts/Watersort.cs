@@ -27,7 +27,7 @@ public class Watersort : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         lastPos = rb.position;
         transform.position = new Vector3(-2, -0.2f, 0);
     }

@@ -110,11 +110,6 @@ public class S_Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
-
-    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {

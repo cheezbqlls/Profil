@@ -13,6 +13,7 @@ public class RatMovement : MonoBehaviour
     bool dead = false;
     float health = 70;
     Animator ani;
+    bool stop;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,10 +65,30 @@ public class RatMovement : MonoBehaviour
         if (other.gameObject.CompareTag("bullet"))
         {
             Damage(6);
+            ani.SetTrigger("Damage");
+            ani.SetBool("ISWalking", false);
+            Debug.Log("hit");
         }
         if (other.gameObject.CompareTag("sword"))
         {
             Damage(10);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ColiderEnemy"))
+        {
+            stop = true;
+            dead = true;
+            ani.SetBool("IsWalking", false);
+            moveSpeed = 0;
+            if (transform.position.x < playerTransform.position.x)
+            {
+                dead = false;
+            }
+
+
         }
     }
 

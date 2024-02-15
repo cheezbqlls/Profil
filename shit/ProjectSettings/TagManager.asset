@@ -14,6 +14,9 @@ TagManager:
   - bullet
   - sword
   - deathZone
+  - ground
+  - Hands
+  - ColiderEnemy
   layers:
   - Default
   - TransparentFX
