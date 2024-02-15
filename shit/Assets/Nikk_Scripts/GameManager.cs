@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spelare.SetActive(false);
         foreach (Texture2D texture in imageTextures)
         {
             Image image = Instantiate(levelSelectPrefab, levelSelectPanel);
@@ -236,5 +237,6 @@ public class GameManager : MonoBehaviour
         exit.SetActive(false);
         puzzle.gameObject.SetActive(false);
         rBSpelare.isKinematic = false;
+        spelare.SetActive(true);
     }
 }

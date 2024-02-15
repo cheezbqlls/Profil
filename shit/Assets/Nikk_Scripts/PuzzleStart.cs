@@ -20,7 +20,7 @@ public class PuzzleStart : MonoBehaviour
     {
         if(yes == true)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 startObject.gameObject.SetActive(true);
                 Debug.Log("snälla");

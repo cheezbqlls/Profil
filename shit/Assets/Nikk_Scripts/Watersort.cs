@@ -20,6 +20,7 @@ public class Watersort : MonoBehaviour
 
     [Header("Done")]
     [SerializeField] private GameObject exit;
+    public GameObject player;
 
 
     int antalRätt; 
@@ -27,8 +28,10 @@ public class Watersort : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         lastPos = rb.position;
+        //ÄNDRA PÅ DETA; DU PLACERAR FÖRSTA POS SJÄLV!!!! KOM IHÅG VÄLDIGT VIKTIGT!!!! HANNNNNNANAAAAAAAA!
         transform.position = new Vector3(-2, -0.2f, 0);
     }
 
@@ -107,6 +110,14 @@ public class Watersort : MonoBehaviour
             antalRätt += 1;
         }
         else if(other.gameObject.CompareTag("1") && type == 2)
+        {
+            rb.position = lastPos;
+        }
+        if (other.gameObject.CompareTag("2") && type == 2)
+        {
+            antalRätt += 1;
+        }
+        else if (other.gameObject.CompareTag("2") && type == 1)
         {
             rb.position = lastPos;
         }
