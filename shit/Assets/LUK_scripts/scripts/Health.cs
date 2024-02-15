@@ -7,13 +7,22 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private GameObject sheild;
+    bool sheildActive = false;
+    float timer;
 
     private int MAX_HEALTH = 125;
 
     // Update is called once per frame
     void Update()
     {
-
+        if(sheildActive == true)
+        {
+            timer += Time.deltaTime;
+            if(timer >= 4)
+            {
+                sheild.SetActive(false);
+            }
+        }
     }
 
     public void Damage(int amount)
@@ -75,6 +84,7 @@ public class Health : MonoBehaviour
         if (other.CompareTag("shieldPotion"))
         {
             sheild.SetActive(true);
+            sheildActive = true;
         }
 
     }

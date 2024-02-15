@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(bullets > 20)
         {
-            Debug.Log("slut");
+            Debug.Log("No left");
             timerOn = true;
         }
         if(timerOn == true)

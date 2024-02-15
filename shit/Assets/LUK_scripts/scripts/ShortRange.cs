@@ -15,6 +15,10 @@ public class ShortRange : MonoBehaviour
         {
             Attack();
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            sword.SetActive(false);
+        }
     }
 
     void Attack()
