@@ -128,7 +128,8 @@ public class S_Enemy : MonoBehaviour
             Damage(10);
             ani.SetBool("Walk", false);
             ani.SetTrigger("Damage");
-           Debug.Log("Hit");
+            Debug.Log("Hit");
+            Debug.Log(health);
         }
     }
 
