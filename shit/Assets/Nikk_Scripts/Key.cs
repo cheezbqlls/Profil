@@ -6,6 +6,7 @@ public class Key : MonoBehaviour
 {
     public GameObject Self;
     public GameObject rat;
+    public GameObject exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            exit.SetActive(true);
             Destroy(Self);
         }
     }

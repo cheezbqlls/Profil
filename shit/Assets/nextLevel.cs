@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class nextLevel : MonoBehaviour
 {
+    public GameObject self;
+    public void SetActive()
+    {
+        self.SetActive(true);
+    }
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
