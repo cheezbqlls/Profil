@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     void OnFire()
     {
         bullets += 1;
-        if(bullets <= 20)
+        if(bullets <= 10)
         {
             ani.SetTrigger("LongRange");
             GameObject newBullet = Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             timer += Time.deltaTime * 100;
             Debug.Log(timer);
         }
-        if(timer > 5)
+        if(timer > 10)
         {
             Debug.Log("done");
             bullets = 0;
@@ -137,7 +137,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(20);
+            TakeDamage(7);
+
+        }
+        if (other.gameObject.CompareTag("Hands"))
+        {
+            TakeDamage(13);
 
         }
         if (other.gameObject.CompareTag("deathZone"))
