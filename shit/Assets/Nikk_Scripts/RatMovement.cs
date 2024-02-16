@@ -75,6 +75,10 @@ public class RatMovement : MonoBehaviour
                 {
                     isChasing = true;
                 }
+                if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
+                {
+                    isChasing = false;
+                }
             }
         }
 
@@ -103,6 +107,10 @@ public class RatMovement : MonoBehaviour
             ani.SetTrigger("Damage");
             ani.SetBool("ISWalking", false);
             Debug.Log("Hit");
+        }
+        if (other.gameObject.CompareTag("deathZone"))
+        {
+            health = 0;
         }
     }
 

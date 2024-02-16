@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     bool yes = false;
     private List<Transform> pieces;
     private Vector2Int dimensions;
+    public GameObject potion;
 
     private float width;
     private float height;
@@ -201,6 +202,11 @@ public class GameManager : MonoBehaviour
         {
             //ram.gameObject.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            exit.SetActive(true);
+        }
     }
 
     private void SnapAndDisableIfCorrect()
@@ -239,6 +245,7 @@ public class GameManager : MonoBehaviour
         puzzle.gameObject.SetActive(false);
         rBSpelare.isKinematic = false;
         spelare.SetActive(true);
+        potion.SetActive(true);
     }
 
     public void Watersort()

@@ -73,6 +73,10 @@ public class S_Enemy : MonoBehaviour
                 {
                     isChasing = true;
                 }
+                if(Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
+                {
+                    isChasing = false;
+                }
                 if (patrolDestination == 0)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
@@ -130,6 +134,10 @@ public class S_Enemy : MonoBehaviour
             ani.SetTrigger("Damage");
             Debug.Log("Hit");
             Debug.Log(health);
+        }
+        if (other.gameObject.CompareTag("deathZone"))
+        {
+            health = 0;
         }
     }
 
