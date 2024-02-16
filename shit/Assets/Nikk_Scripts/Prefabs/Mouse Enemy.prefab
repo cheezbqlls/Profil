@@ -48,7 +48,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 6
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -155,8 +155,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056453347, y: -0.17677343}
-  m_Size: {x: 0.50773406, y: 1.2137048}
+  m_Offset: {x: 0.056453347, y: -0.1384443}
+  m_Size: {x: 0.50773406, y: 1.1370466}
   m_Direction: 0
 --- !u!95 &6344108615719373168
 Animator:

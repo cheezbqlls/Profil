@@ -23,6 +23,7 @@ TagManager:
   - side1
   - White
   - Exit
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
