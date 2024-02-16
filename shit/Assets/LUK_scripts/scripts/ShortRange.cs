@@ -8,12 +8,20 @@ public class ShortRange : MonoBehaviour
     public float attackRange = 1f;
     public string compareTag;
     public GameObject sword;
+    bool done;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        
+        if (Input.GetMouseButtonDown(1) && done == false)
         {
             Attack();
+            done = true;
+        }
+        if(done == true)
+        {
+            done = false;
+            sword.SetActive(false);
         }
         if (Input.GetMouseButtonDown(0))
         {

@@ -32,8 +32,12 @@ public class HealthManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            TakeDamage(20);
+            TakeDamage(8);
 
+        }
+        if (other.gameObject.CompareTag("Hands"))
+        {
+            TakeDamage(14);
         }
         if (other.gameObject.CompareTag("deathZone"))
         {
