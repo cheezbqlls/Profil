@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
         if(sheildActive == true)
         {
             timer += Time.deltaTime;
-            if(timer >= 4)
+            if(timer >= 25)
             {
                 sheild.SetActive(false);
             }

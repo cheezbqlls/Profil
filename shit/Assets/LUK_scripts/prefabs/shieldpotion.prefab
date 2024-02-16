@@ -63,7 +63,7 @@ Tilemap:
       - {fileID: 1789960583, guid: 146a216880a987d49a98c9baf6573dac, type: 3}
       - {fileID: -954379840, guid: 146a216880a987d49a98c9baf6573dac, type: 3}
       - {fileID: 993680560, guid: 146a216880a987d49a98c9baf6573dac, type: 3}
-      m_AnimationSpeed: 4.2377114
+      m_AnimationSpeed: 2.3223884
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.5821075, y: 1.2243708}
+  m_Offset: {x: 0.013659477, y: -0.24559999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3511505, y: 0.14344001}
+  m_Size: {x: 0.27640724, y: 0.29292822}
   m_EdgeRadius: 0
 --- !u!114 &613782393
 MonoBehaviour:

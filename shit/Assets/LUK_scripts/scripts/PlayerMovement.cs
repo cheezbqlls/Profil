@@ -27,7 +27,11 @@ public class PlayerMovement : MonoBehaviour
     float timerSheild;
     float timerHurt;
     public GameObject self;
-    
+    bool god;
+    float timer2;
+    bool sheildActive = false;
+
+
 
 
     void Start()
@@ -35,10 +39,20 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         ani = GetComponent<Animator>();
+        
     }
 
     void Update()
     {
+        if (sheildActive == true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 25)
+            {
+                sheild.SetActive(false);
+                sheildActive = false;
+            }
+        }
         if (isHurt == false)
         {
             Jump();
@@ -52,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
                 isHurt = false;
                 timerHurt = 0;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            god = true;
         }
     }
     void OnMove(InputValue value)
@@ -126,11 +144,23 @@ public class PlayerMovement : MonoBehaviour
     }
     public void TakeDamage(float Damage)
     {
-        healthAmount -= Damage;
-        healthBar.fillAmount = healthAmount / 100f;
-        ani.SetTrigger("isDamaged");
-        ani.SetBool("isRunning", false);
-        isHurt = true;
+        if(god == true )
+        {
+            Damage = 0;
+        }
+        else if(sheildActive == true)
+        {
+            Damage = 0;
+        }
+        else
+        {
+            healthAmount -= Damage;
+            healthBar.fillAmount = healthAmount / 100f;
+            ani.SetTrigger("isDamaged");
+            ani.SetBool("isRunning", false);
+            isHurt = true;
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)

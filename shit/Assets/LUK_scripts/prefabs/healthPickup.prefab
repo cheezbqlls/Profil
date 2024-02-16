@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4623074287843279775}
   - component: {fileID: 4623074287843279773}
   - component: {fileID: 4623074287843279772}
-  - component: {fileID: 4156313368558566643}
+  - component: {fileID: 87632015}
   m_Layer: 0
   m_Name: healthPickup
-  m_TagString: Untagged
+  m_TagString: healingPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4623074287843279774}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.744027, y: -0.5501573, z: 0.055935666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62,7 +62,7 @@ Tilemap:
       - {fileID: -1533157668, guid: 2a6c1383b49dade4ebf465c5d3b9ae29, type: 3}
       - {fileID: 804024436, guid: 2a6c1383b49dade4ebf465c5d3b9ae29, type: 3}
       - {fileID: 1021013848, guid: 2a6c1383b49dade4ebf465c5d3b9ae29, type: 3}
-      m_AnimationSpeed: 2.9388201
+      m_AnimationSpeed: 3.660505
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -166,15 +166,29 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &4156313368558566643
-MonoBehaviour:
+--- !u!61 &87632015
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4623074287843279774}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a871895af748eb46a8de972f57d33b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -18.400677, y: -1.052014}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4078598, y: 0.39165425}
+  m_EdgeRadius: 0

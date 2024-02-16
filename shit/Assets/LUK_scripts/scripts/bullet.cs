@@ -25,8 +25,16 @@ public class bullet : MonoBehaviour
     {
         dir = xDir;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(self);
+        if (other.gameObject.CompareTag("Shield"))
+        {
+
+        }
+        else
+        {
+            Destroy(self);
+        }
+        
     }
 }
