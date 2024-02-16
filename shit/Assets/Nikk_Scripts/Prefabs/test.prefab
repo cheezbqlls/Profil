@@ -152,3 +152,5 @@ MonoBehaviour:
   yCord: 2.3
   xCord2: 1
   exit: {fileID: 0}
+  player: {fileID: 0}
+  camerea: {fileID: 0}

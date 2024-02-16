@@ -13,7 +13,10 @@ public class RatMovement : MonoBehaviour
     bool dead = false;
     float health = 70;
     Animator ani;
+    float timer;
+    float timer2;
     bool stop;
+    public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,16 +40,33 @@ public class RatMovement : MonoBehaviour
         {
             if (isChasing)
             {
-                ani.SetBool("IsWalking", true);
+                
                 if (transform.position.x > playerTransform.position.x)
                 {
-                    transform.localScale = new Vector3(-1, 1, 1);
-                    transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+                    ani.SetBool("IsWalking", false);
+                    timer2 = 0;
+                    timer += Time.deltaTime;
+
+                    if (timer >= 2)
+                    {
+                        transform.localScale = new Vector3(-1, 1, 1);
+                        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+                        ani.SetBool("IsWalking", true);
+                    }
+                    
                 }
                 if (transform.position.x < playerTransform.position.x)
                 {
-                    transform.localScale = new Vector3(1, 1, 1);
-                    transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+                    ani.SetBool("IsWalking", false);
+                    timer = 0;
+                    timer2 += Time.deltaTime;
+                    if (timer2 >= 0.5)
+                    {
+                        transform.localScale = new Vector3(1, 1, 1);
+                        transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+                        ani.SetBool("IsWalking", true);
+                    }
+                    
                 }
             }
             else
@@ -56,6 +76,14 @@ public class RatMovement : MonoBehaviour
                     isChasing = true;
                 }
             }
+        }
+
+        if (health <= 0)
+        {
+            key.SetActive(true);
+            dead = true;
+            ani.SetTrigger("Death");
+            
         }
         
     }
@@ -67,11 +95,14 @@ public class RatMovement : MonoBehaviour
             Damage(6);
             ani.SetTrigger("Damage");
             ani.SetBool("ISWalking", false);
-            Debug.Log("hit");
+            Debug.Log(health);
         }
         if (other.gameObject.CompareTag("sword"))
         {
             Damage(10);
+            ani.SetTrigger("Damage");
+            ani.SetBool("ISWalking", false);
+            Debug.Log("Hit");
         }
     }
 
@@ -89,6 +120,11 @@ public class RatMovement : MonoBehaviour
             }
 
 
+        }
+        if (other.CompareTag("Player"))
+        {
+            ani.SetTrigger("Attack");
+            ani.SetBool("IsWalking", false);
         }
     }
 

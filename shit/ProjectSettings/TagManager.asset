@@ -18,6 +18,11 @@ TagManager:
   - Hands
   - ColiderEnemy
   - Start
+  - 2
+  - Sides
+  - side1
+  - White
+  - Exit
   layers:
   - Default
   - TransparentFX

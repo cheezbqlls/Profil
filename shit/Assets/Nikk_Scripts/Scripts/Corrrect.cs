@@ -12,18 +12,20 @@ public class Corrrect : MonoBehaviour
     [Header("position, + 0.45x +0.4y")]
     [SerializeField] private float xLed;
     [SerializeField] private float yLed;
+    public GameObject camera;
+    
     float corect;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(xLed, yLed, 0);
+        transform.position = new Vector3(camera.transform.position.x + xLed, camera.transform.position.y + yLed, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(corect == 4)
+        if(corect == 8)
         {
             EXIT.SetActive(true);
         }
@@ -34,7 +36,12 @@ public class Corrrect : MonoBehaviour
         if(other.gameObject.CompareTag("red") && type == 1)
         {
             corect += 1;
-            Debug.Log("YAYYYYYY");
+            Debug.Log(corect);
+        }
+        if(other.gameObject.CompareTag("White")&& type == 2)
+        {
+            corect += 1;
         }
     }
+
 }

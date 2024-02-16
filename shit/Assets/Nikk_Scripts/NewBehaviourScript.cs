@@ -7,6 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] float posX;
     [SerializeField] float posY;
     public GameObject camera;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,4 +19,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
         
     }
+
+    
 }

@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private float width;
     private float height;
+    public GameObject watersort;
 
     private Transform draggingPiece = null;
     private Vector3 offSet;
@@ -238,5 +239,10 @@ public class GameManager : MonoBehaviour
         puzzle.gameObject.SetActive(false);
         rBSpelare.isKinematic = false;
         spelare.SetActive(true);
+    }
+
+    public void Watersort()
+    {
+        watersort.SetActive(false);
     }
 }

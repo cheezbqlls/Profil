@@ -17,10 +17,17 @@ public class Watersort : MonoBehaviour
     [SerializeField] float xCord;
     [SerializeField] float yCord;
     [SerializeField] float xCord2;
+    [SerializeField] float xCord3;
 
     [Header("Done")]
     [SerializeField] private GameObject exit;
     public GameObject player;
+    public GameObject camerea;
+
+    bool side1;
+    bool side;
+
+    
 
 
     int antalRätt; 
@@ -32,50 +39,48 @@ public class Watersort : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastPos = rb.position;
         //ÄNDRA PÅ DETA; DU PLACERAR FÖRSTA POS SJÄLV!!!! KOM IHÅG VÄLDIGT VIKTIGT!!!! HANNNNNNANAAAAAAAA!
-        transform.position = new Vector3(-2, -0.2f, 0);
+        transform.position = new Vector3(camerea.transform.position.x + xCord3 , -0.2f, 0);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //Tub 1
-        if(transform.position.x > (xCord -1) && transform.position.y < yCord && rightArea == false)
+        if(transform.position.x > (camerea.transform.position.x + xCord -1) && transform.position.y < (camerea.transform.position.y + yCord) && rightArea == false)
         {
-            transform.position = new Vector3((xCord-1), transform.position.y, 0);
+            transform.position = new Vector3((camerea.transform.position.x + xCord - 1), transform.position.y, 0);
 
         }
-        if(transform.position.x > (xCord-1))
+        if(transform.position.x > (camerea.transform.position.x + xCord - 1))
         {
             rightArea = true;
-            transform.position = new Vector3(xCord, transform.position.y, 0);
+            transform.position = new Vector3((camerea.transform.position.x + xCord ), transform.position.y, 0);
 
         }
-        if (transform.position.y > (yCord+0.5) && rightArea == true && transform.position.x < xCord)
+        if (transform.position.y > (camerea.transform.position.y + yCord +0.5) && rightArea == true && transform.position.x < (camerea.transform.position.x + xCord))
         {
             rightArea = false;
         }
 
         //Tub 2
-        if (transform.position.x > (xCord2 - 1) && transform.position.y < yCord && rightArea == false)
+        if (transform.position.x > (camerea.transform.position.x + xCord2 - 1) && transform.position.y <camerea.transform.position.y + yCord && rightArea == false)
         {
-            transform.position = new Vector3((xCord2 - 1), transform.position.y, 0);
+            transform.position = new Vector3((camerea.transform.position.x + xCord2 - 1), transform.position.y, 0);
 
         }
-        if (transform.position.x > (xCord2 - 1) && transform.position.x < (xCord2 + 1))
+        if (transform.position.x > (camerea.transform.position.x + xCord2 - 1) && transform.position.x < ((camerea.transform.position.x + xCord2) + 1))
         {
             rightArea = true;
-            transform.position = new Vector3(xCord2, transform.position.y, 0);
+            transform.position = new Vector3((camerea.transform.position.x + xCord2), transform.position.y, 0);
 
         }
-        if (transform.position.y > (yCord + 0.5) && rightArea == true && transform.position.x < xCord2)
+        if (transform.position.y > (camerea.transform.position.y + yCord + 0.5) && rightArea == true && transform.position.x < (camerea.transform.position.x + xCord2))
         {
             rightArea = false;
         }
-       
-        if(antalRätt == 4)
-        {
-            Done();
-        }
+
+
 
     }
 
@@ -105,17 +110,10 @@ public class Watersort : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("1") && type == 1)
-        {
-            antalRätt += 1;
-        }
-        else if(other.gameObject.CompareTag("1") && type == 2)
+
+        if(other.gameObject.CompareTag("1") && type == 2)
         {
             rb.position = lastPos;
-        }
-        if (other.gameObject.CompareTag("2") && type == 2)
-        {
-            antalRätt += 1;
         }
         else if (other.gameObject.CompareTag("2") && type == 1)
         {
