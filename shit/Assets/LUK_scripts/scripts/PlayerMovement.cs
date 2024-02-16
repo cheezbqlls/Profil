@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
             TakeDamage(7);
 
@@ -166,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Die()
     {
-        Destroy(gameObject);
+        ani.SetBool("isRunning", false);
+        ani.SetTrigger("Death");
     }
 }

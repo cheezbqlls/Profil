@@ -9,6 +9,7 @@ public class ShortRange : MonoBehaviour
     public string compareTag;
     public GameObject sword;
     bool done;
+    float timer;
 
     void Update()
     {
@@ -20,8 +21,13 @@ public class ShortRange : MonoBehaviour
         }
         if(done == true)
         {
-            done = false;
-            sword.SetActive(false);
+            timer += Time.deltaTime;
+            if (timer >= 0.5)
+            {
+                timer = 0;
+                sword.SetActive(false);
+                done = false;
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
